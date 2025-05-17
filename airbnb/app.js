@@ -13,6 +13,7 @@ const app = expres();
 app.use(expres.urlencoded()); //body parser
 app.use(userRouter);
 app.use("/host",hostRouter);
+app.use(expres.static(path.join(rootDir,'public')));
 
 app.use((req, res, next)=>{
     res.status(404).sendFile(path.join(rootDir,'views','404.html'));
