@@ -1,0 +1,39 @@
+<%- include('partials/head') %>
+</head>
+<body class="bg-gray-100">
+    <%- include('partials/nav') %>
+  
+    <main class="container mx-auto bg-white shadow-xl rounded-2xl p-10 mt-12 max-w-3xl">
+      <h2 class="text-4xl md:text-5xl text-gray-800 font-extrabold text-center mb-8">
+        🏠 Registered Homes
+      </h2>
+  
+      <ul class="space-y-6">
+        <% registeredHomes.forEach(function(home) { %>
+          <li class="bg-gray-50 border border-gray-200 p-6 rounded-lg shadow-sm hover:shadow-md transition duration-300">
+            <div class="flex flex-col md:flex-row gap-4">
+              <!-- Image -->
+              <div class="flex-shrink-0">
+                <img
+                  src="<%= home.photoUrl %>"
+                  alt="Home Image"
+                  class="w-full md:w-48 h-32 object-cover rounded-lg border"
+                />
+              </div>
+  
+              <!-- Details -->
+              <div class="flex-1">
+                <h3 class="text-2xl font-semibold text-gray-800 mb-1">
+                  <%= home.houseName %>
+                </h3>
+                <p class="text-gray-600 mb-1"><span class="font-medium">📍 Location:</span> <%= home.location %></p>
+                <p class="text-gray-600 mb-1"><span class="font-medium">💲 Price per Night:</span> $<%= home.price %></p>
+                <p class="text-gray-600"><span class="font-medium">⭐ Rating:</span> <%= home.rating %> / 5</p>
+              </div>
+            </div>
+          </li>
+        <% }); %>
+      </ul>
+    </main>
+  </body>
+  </html>

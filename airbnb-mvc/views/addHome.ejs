@@ -1,0 +1,103 @@
+<%- include('partials/head') %>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+  <%- include('partials/nav') %>
+
+  <main class="flex-grow flex items-center justify-center px-4">
+    <div class="bg-white shadow-lg rounded-xl p-8 w-full max-w-md mt-8">
+      <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">
+        Register Your Home
+      </h1>
+
+      <form action="/host/add-home" method="POST" class="space-y-5">
+        <!-- Home Name -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700 mb-1">
+            Home Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="houseName"
+            placeholder="Enter the name of your home"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <!-- Price per Night -->
+        <div>
+          <label for="price" class="block text-sm font-medium text-gray-700 mb-1">
+            Price per Night (Rs)
+          </label>
+          <input
+            type="number"
+            id="price"
+            name="price"
+            placeholder="Enter price per night"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            required
+            min="0"
+          />
+        </div>
+
+        <!-- Location -->
+        <div>
+          <label for="location" class="block text-sm font-medium text-gray-700 mb-1">
+            Location
+          </label>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            placeholder="Enter the location"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <!-- Rating -->
+        <div>
+          <label for="rating" class="block text-sm font-medium text-gray-700 mb-1">
+            Rating (1 - 5)
+          </label>
+          <input
+            type="number"
+            id="rating"
+            name="rating"
+            placeholder="Enter rating"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            min="1"
+            max="5"
+            step="0.1"
+            required
+          />
+        </div>
+
+        <!-- Photo URL -->
+        <div>
+          <label for="photoUrl" class="block text-sm font-medium text-gray-700 mb-1">
+            Photo URL
+          </label>
+          <input
+            type="url"
+            id="photoUrl"
+            name="photoUrl"
+            placeholder="Enter image URL"
+            class="w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <input
+            type="submit"
+            value="Add Home"
+            class="w-full bg-blue-600 text-white font-semibold py-2 rounded-lg hover:bg-blue-700 transition-colors duration-300 cursor-pointer"
+          />
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+</html>
